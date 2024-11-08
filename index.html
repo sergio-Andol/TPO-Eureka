@@ -14,14 +14,20 @@
     <script defer src="./js/app.js"></script>
 </head>
 <body>
-
     <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="./logo.png" alt="Logo Instituto Eureka">
-        </div>
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <a href="#">
+                <div class="logo">
+                    <img src="./logo.png" alt="Logo" />
+                </div>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#">Inicio</a></li>
                 <li><a href="./cursos.html">Cursos</a></li>
                 <li><a href="./reservas.html">Reservas</a></li>
@@ -30,20 +36,72 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Sección de Presentación -->
-    <section id="presentacion">
-        <h1>Bienvenidos al Instituto Eureka</h1>
-        <p>El sitio web del Instituto de Apoyo Educativo en la universidad está dirigido a estudiantes, profesores y personal académico, con un rango de edad entre 18 y 60 años, y representación equilibrada de todos los géneros. Los estudiantes buscan mejorar su rendimiento académico y tienen afinidad por la tecnología, mientras que los profesores están interesados en metodologías pedagógicas y herramientas digitales.
-
-            Dado que muchos usuarios tienen recursos limitados, el sitio ofrece recursos gratuitos o de bajo costo, así como apoyo académico, emocional y acceso a información sobre becas y talleres.</p>
-        <a href="cursos.html" class="cta-button">Conoce nuestros cursos</a>
-    </section>
-
-    <!-- Footer -->
+    <main>
+        <!-- Carrusel -->
+        <div id="temaCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Diapositiva 1 -->
+                <div class="carousel-item active">
+                    <a href="./cursos.html">
+                        <img src="./Conoce Nuestros Cursos.jpg" class="d-block w-100" alt="Materias Abiertas">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Materias Abiertas</h5>
+                            <p>Explora una variedad de materias disponibles para mejorar tus habilidades.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Diapositiva 2 -->
+                <div class="carousel-item">
+                    <a href="./cursos.html">
+                        <img src="./Conoce a nuestros profesores.jpg" class="d-block w-100" alt="Conoce a nuestros Profesores">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Conoce a nuestros Profesores</h5>
+                            <p>Aprende de los mejores y conoce a los profesores que te guiarán en tu aprendizaje.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Diapositiva 3 -->
+                <div class="carousel-item">
+                    <a href="./reservas.html">
+                        <img src="./Calcula tu futuro.jpg" class="d-block w-100" alt="Estudiantes Destacados">
+                        <div class="carousel-caption d-none d-md-block">
+                            <p>Descubre nuestros precios y arma tu propio pack de materias.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Diapositiva 4 -->
+                <div class="carousel-item">
+                    <a href="./recursos.html">
+                        <img src="./Foro.jpg" class="d-block w-100" alt="Recursos Disponibles">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Foro de y para estudiantes</h5>
+                            <p>Accede a una amplia gama de recursos para mejorar tu aprendizaje.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Controles de navegación del carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#temaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#temaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </main>
     <footer>
-        <p>&copy; 2024 Instituto Eureka. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Instituto Eureka. Todos los derechos reservados.</p>
+            <div class="logoUade">
+                <img src="./uade.png" alt="UADE Logo">
+            </div>
+        </div>
     </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
@@ -52,6 +110,5 @@
             navLinks.classList.toggle('active');
         });
     </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
