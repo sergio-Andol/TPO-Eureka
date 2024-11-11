@@ -36,21 +36,73 @@
             </ul>
         </nav>
     </header>
-    <section id="recursos">
-        <h2>Biblioteca Digital</h2>
-        <div class="recurso">
-            <h3>Guía de Matemáticas</h3>
-            <a href="recursos/guia-matematicas.pdf" download>Descargar</a>
+
+
+    <main class="container mt-5" id="biblioteca">
+        <div class="row">
+            <!-- Columna de Filtros -->
+            <aside class="col-md-3">
+                <h2>Filtros</h2>
+                <div class="form-group">
+                    <label for="buscar">Buscar materias</label>
+                    <input type="text" id="buscar" class="form-control" placeholder="Buscar" onkeyup="filtrarRecursos()">
+                </div>
+                <div class="form-group mt-3">
+                    <h5>Área</h5>
+                    <div>
+                        <input type="checkbox" id="matematicas" onchange="filtrarRecursos()">
+                        <label for="matematicas">Matemáticas</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ingles" onchange="filtrarRecursos()">
+                        <label for="ingles">Inglés</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="historia" onchange="filtrarRecursos()">
+                        <label for="historia">Historia</label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Columna de Resultados -->
+            <section class="col-md-9" id="resultados">
+                <h1>Biblioteca Digital</h1>
+                
+                <!-- Sección Matemáticas -->
+                <div class="recurso" data-category="matematicas">
+                    <h2>Matemáticas</h2>
+                    <p>Accede a una amplia colección de libros digitales.</p>
+                    <a href="recursos/ebooks.html" target="_blank">Ver más</a>
+                </div>
+
+                <!-- Sección Inglés -->
+                <div class="recurso" data-category="ingles">
+                    <h2>Inglés</h2>
+                    <p>Accede a una amplia colección de libros digitales.</p>
+                    <a href="recursos/bases-datos.html" target="_blank">Ver más</a>
+                </div>
+
+                <!-- Sección Historia -->
+                <div class="recurso" data-category="historia">
+                    <h2>Historia</h2>
+                    <p>Accede a una amplia colección de libros digitales.</p>
+                    <a href="recursos/repositorio.html" target="_blank">Ver más</a>
+                </div>
+            </section>
         </div>
-        <!-- Añadir más recursos -->
-    </section>
-    
+    </main>
 
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Instituto Eureka. Todos los derechos reservados.</p>
+      <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Instituto Eureka. Todos los derechos reservados.</p>
+            <div class="logoUade">
+                <img src="./uade.png" alt="UADE Logo">
+            </div>
+        </div>
     </footer>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
@@ -59,6 +111,5 @@
             navLinks.classList.toggle('active');
         });
     </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
