@@ -70,7 +70,7 @@ main {
 
 .carousel-item img {
     width: 100%; /* La imagen ocupa todo el ancho del carrusel */
-    height: 900px;
+    height: 700px;
     max-width: 1600px;
     object-fit: cover; /* Mantiene la imagen adaptada al espacio */
 }
