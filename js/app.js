@@ -1,10 +1,23 @@
+function filtrarRecursos() {
+    const searchValue = document.getElementById("buscar").value.toLowerCase();
+    const filtros = {
+        matematicas: document.getElementById("matematicas").checked,
+        ingles: document.getElementById("ingles").checked,
+        historia: document.getElementById("historia").checked
+    };
 
+    document.querySelectorAll(".recurso").forEach(recurso => {
+        const title = recurso.querySelector("h2").textContent.toLowerCase();
+        const category = recurso.getAttribute("data-category");
 
-// Cuando hago click .button, .nav TOGGLE 'activo' 
+        // Verifica si el título coincide con el término de búsqueda
+        const matchesSearch = title.includes(searchValue);
 
-const button = document.querySelector('.button')
-const nav    = document.querySelector('.nav')
+        // Verifica si el recurso coincide con alguno de los filtros seleccionados
+        const isFiltered = Object.values(filtros).some(value => value === true);
+        const matchesFilter = !isFiltered || filtros[category];
 
-button.addEventListener('click',()=>{
-    nav.classList.toggle('activo')
-})
+        // Muestra u oculta el recurso dependiendo de los filtros
+        recurso.style.display = matchesSearch && matchesFilter ? "block" : "none";
+    });
+}
