@@ -37,7 +37,6 @@
         </nav>
     </header>
 
-
     <main class="container mt-5" id="biblioteca">
         <div class="row">
             <!-- Columna de Filtros -->
@@ -61,6 +60,9 @@
                         <input type="checkbox" id="historia" onchange="filtrarRecursos()">
                         <label for="historia">Historia</label>
                     </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button class="btn btn-secondary mt-3" onclick="limpiarFiltros()" style="background-color: #007BFF;">Limpiar Filtros</button>
                 </div>
             </aside>
 
@@ -92,8 +94,7 @@
         </div>
     </main>
 
-
-      <footer>
+    <footer>
         <div class="footer-content">
             <p>&copy; 2024 Instituto Eureka. Todos los derechos reservados.</p>
             <div class="logoUade">
@@ -110,6 +111,37 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+
+        function filtrarRecursos() {
+            const searchValue = document.getElementById("buscar").value.toLowerCase();
+            const filtros = {
+                matematicas: document.getElementById("matematicas").checked,
+                ingles: document.getElementById("ingles").checked,
+                historia: document.getElementById("historia").checked
+            };
+
+            document.querySelectorAll(".recurso").forEach(recurso => {
+                const title = recurso.querySelector("h2").textContent.toLowerCase();
+                const category = recurso.getAttribute("data-category");
+
+                const matchesSearch = title.includes(searchValue);
+                const isFiltered = Object.values(filtros).some(value => value === true);
+                const matchesFilter = !isFiltered || filtros[category];
+
+                recurso.style.display = matchesSearch && matchesFilter ? "block" : "none";
+            });
+        }
+
+        function limpiarFiltros() {
+            document.getElementById("buscar").value = "";
+            document.getElementById("matematicas").checked = false;
+            document.getElementById("ingles").checked = false;
+            document.getElementById("historia").checked = false;
+
+            document.querySelectorAll(".recurso").forEach(recurso => {
+                recurso.style.display = "block";
+            });
+        }
     </script>
 </body>
 </html>

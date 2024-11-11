@@ -21,3 +21,7 @@ function filtrarRecursos() {
         recurso.style.display = matchesSearch && matchesFilter ? "block" : "none";
     });
 }
+function limpiarFiltro() {
+    document.getElementById("searchInput").value = ""; // Limpia el campo de búsqueda
+    document.getElementById("resultados").innerHTML = ""; // Opcional: limpia los resultados
+}
