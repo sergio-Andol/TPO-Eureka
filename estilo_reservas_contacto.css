@@ -1,0 +1,385 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente base */
+body {
+    font-family: "cinzel";
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que ocupe toda la altura */
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C0CEDD;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra los enlaces en escritorio */
+    width: 90%;
+    margin-top: 30px;
+    gap: 100px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+}
+
+.menu-toggle .bar {
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+/* Contenido principal */
+.contenido-main {
+    margin-top: 80px; /* Para evitar que el contenido quede cubierto por la barra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); /* Resta la altura de la barra */
+    text-align: center;
+    flex-direction: column;
+}
+
+/*---FORMULARIO CONTACTO----------*/
+/*----PROPIEDADES DEL FORMULARIO----*/
+
+.forum-container {
+    max-width: 700px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+
+h1 {
+    text-align: left;
+    color: #2d3436;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    display: flex;
+}
+
+/*----PROPIEDADES DEL ÁREA DE TEXTO DEL FORM----*/
+
+textarea { 
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #dfe6e9;
+    resize: vertical;
+    margin-bottom: 10px;
+    font-size: 1em;
+    height: 100px; /* Altura predeterminada */
+    max-height: 200px; /* Altura máxima */
+    min-height: 100px;
+}
+
+/*----BOTON ENVIAR----*/
+
+button {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    color: #ffffff;
+    background-color: #0984e3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.message-board {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message, .reply {
+    border: 1px solid #dfe6e9;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    margin-left: 0;
+}
+
+.message:hover, .reply:hover {
+    transform: scale(1.02);
+}
+
+.reply {
+    background-color: #dfe6e9;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.reply-btn {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 0.8em;
+    color: #0984e3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.form-container label,
+.reply label {
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.reply input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #dfe6e9;
+    border-radius: 5px;
+}
+
+/* ------RESERVAS ------------------- */
+section {
+    width: 50%; /* Ocupa todo el ancho del contenedor */
+    max-width: 600px; /* Limita el ancho máximo a 600px */
+    margin: 180px; /* Agrega espacio arriba y abajo entre secciones */
+    margin-bottom: 350px;
+    margin-left: 400px;
+}
+
+.container1, .container2 {
+    padding: 20px; /* Agrega espacio interno alrededor del contenido */
+    border: 1px solid #ddd; /* Añade un borde gris claro */
+    border-radius: 8px; /* Redondea las esquinas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+    background-color: #fff; /* Fondo blanco */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+form {
+    display: flex; /* Flex layout para organizar los elementos dentro del formulario */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.form-group, .checkbox-group, .result {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+textarea {
+    width: 100%; /* Hace que ocupe todo el ancho disponible del contenedor */
+    max-width: 800px; /* Máximo ancho que puede alcanzar */
+    height: 100px; /* Altura predeterminada */
+    max-height: 200px; /* Altura máxima */
+    min-height: 100px; /* Altura mínima */
+    resize: vertical; /* Permite al usuario ajustar la altura, pero no el ancho */
+    box-sizing: border-box; /* Asegura que padding y border no excedan el tamaño del contenedor */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Redondea las esquinas del borde */
+    resize: none; /* Desactiva la opción de redimensionar */
+
+}
+
+.checkbox-group label {
+    display: flex; /* Flex layout para alinear el texto y el checkbox */
+    justify-content: space-between; /* Espacia el texto a la izquierda y el checkbox a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    margin-bottom: 10px; /* Espacio inferior entre cada opción */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+input[type="text"], input[type="email"], input[type="date"], input[type="time"], textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Espacio interno alrededor del contenido */
+    margin: 10px 0; /* Espacio superior e inferior entre elementos */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 4px; /* Redondea las esquinas */
+    box-sizing: border-box; /* Asegura que padding y border no excedan el tamaño del contenedor */
+}
+
+button {
+    padding: 10px 20px; /* Espacio interno alrededor del botón */
+    margin-top: 15px; /* Espacio superior para separar el botón de otros elementos */
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color de texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Redondea las esquinas */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+
+button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo cuando se pasa el ratón por encima */
+}
+
+#result h2 {
+    margin-top: 20px; /* Espacio superior para separar el encabezado de otros elementos */
+}
+
+.hidden {
+    display: none; /* Oculta el elemento */
+}
+
+
+/*CALCULADORA*/
+
+.section2 {
+    margin-left: 1100px;
+    margin-top: -980px;
+}
+
+
+
+
+/* -----PROPIEDADES DEL FOOTER--------- */
+footer {
+    font-family: 'Cinzel';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0CEDD;
+    color: #000000;
+    padding: 1rem;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.logoUade img {
+    max-height: 50px;
+}
+
+
+
+
+
+/* ---------MQ RESPONSIVE ELEMENTOS--------- */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #C0CEDD;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        padding: 80px;
+        justify-content: center; /* Centra los enlaces en pantallas pequeñas */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-top: -50px;
+        text-align: center; /* CENTRA LOS ENLACES */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar .logo {
+        text-align: center; /* CENTRA EL LOGO */
+        margin-bottom: 20px;
+    }
+
+    .contenido-main {
+        margin-top: 200px;
+        margin-bottom: 50px;
+    }
+
+    #temaCarousel {
+        margin-top: -650px;
+    }
+}
+
+/* ---- MQ RESPONSIVE --RESERVAS---- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.2em;
+        text-align: left;
+        text-decoration: #000000;
+    }
+    
+    .section2 {
+        margin-left: 1px;
+        width: 100%;
+    }
+
+    .section {
+        margin-left: 110px;
+        margin: 204px 1px 1100px;
+        width: 100%;
+    }
+}
