@@ -37,12 +37,30 @@
         </nav>
     </header>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Dirección: Calle Falsa 123, Buenos Aires</p>
-        <p>Teléfono: (011) 1234-5678</p>
-        <p>Email: contacto@institutoeureka.com</p>
-    </section>
+     <main>
+    <div class="contenido-main">
+        <h1>Contactá con nosotros</h1><br>
+        <h6><strong>Teléfonos:</strong> 4868-9720 | 011-8561-9778</h6>
+        <h6><strong>Mail:</strong> eurekaeducacion@eureka.edu.ar</h6>
+        <h6><strong>Dirección:</strong> Av. Corrientes 488 (Piso 8, Oficina B)</h6><br><br>
+        
+        <h3>También podes dejarnos un mensaje a través de nuestro Foro</h3><br><br>
+        <div class="forum-container">  <!--CONTENEDOR DEL FORMULARIO-->  
+            <div class="form-container">
+                <label for="name">Ingrese su Nombre:</label><br>
+                <!--LINEA PARA INGRESAR OBLIGATORIAMENTE EL NOMBRE EN EL FORM-->
+                <p id="nameError" class="error-message" style="color: rgb(255, 49, 49); display: none;">Debe agregar su nombre para poder continuar.</p>
+                <input type="text" id="name" required>
+                <textarea id="mainMessage" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <button id="sendMessage">Enviar Mensaje</button>
+            </div>
+            <div id="messageBoard" class="message-board"></div>
+        </div>
+    </div>
+
+    <!--SCRIPT FORO ENVÍO MENSAJES-->
+    <script defer src="js/script.js"></script>
+    </main>
     
 
     <!-- Footer -->
