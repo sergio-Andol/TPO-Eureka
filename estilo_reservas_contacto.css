@@ -56,7 +56,7 @@ header .logo img {
 
 /* Contenido principal */
 .contenido-main {
-    margin-top: -15px; /* Para evitar que el contenido quede cubierto por la barra */
+    margin-top: -25px; /* Para evitar que el contenido quede cubierto por la barra */
     display: flex;
     justify-content: center;
     align-items: center;
