@@ -84,9 +84,7 @@ header .logo img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
-    margin-left: 220px;
-    margin-top: 60px;
-    margin-bottom: 80px;
+    margin: 60px auto 80px auto; /* Centra el contenedor horizontalmente */
 }
 
 h1 {
@@ -186,30 +184,60 @@ button {
 
 /* ------RESERVAS ------------------- */
 section {
-    width: 50%;
-    max-width: 600px;
-    margin: 90px;
-    margin-bottom: 382px;
-    margin-left: 35px;
+    display: flex;
+    justify-content: space-between; /* Coloca los elementos a los extremos */
+    margin: 190px auto 382px auto; /* Centra horizontalmente el section */
+    gap: 90px; /* Espacio entre los contenedores */
+    margin-bottom: 100px;
 }
 
+.container1, .container2 {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+
 .container1 {
-    padding: 20px; /* Agrega espacio interno alrededor del contenido */
-    border: 1px solid #ddd; /* Añade un borde gris claro */
-    border-radius: 8px; /* Redondea las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
-    background-color: #fff; /* Fondo blanco */
-    text-align: center; /* Centra el texto dentro del contenedor */
+    margin-right: auto; /* Alinea a la izquierda */
 }
 
 .container2 {
-    padding: 20px; /* Agrega espacio interno alrededor del contenido */
-    border: 1px solid #ddd; /* Añade un borde gris claro */
-    border-radius: 8px; /* Redondea las esquinas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
-    background-color: #fff; /* Fondo blanco */
-    text-align: center; /* Centra el texto dentro del contenedor */
+    margin-left: auto; /* Alinea a la derecha */
 }
+
+.cabecera1 {
+    position: absolute;
+    top: 0; /* Coloca la cabecera en la parte superior */
+    left: 50%; /* Coloca la cabecera en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta para que esté centrado correctamente */
+    z-index: 10; /* Asegura que esté por encima de los demás elementos */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 145px;
+    margin-left: -200px;
+    width: 400px;
+}
+
+.cabecera2 {
+    position: absolute;
+    top: 0; /* Coloca la cabecera en la parte superior */
+    left: 50%; /* Coloca la cabecera en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta para que esté centrado correctamente */
+    z-index: 10; /* Asegura que esté por encima de los demás elementos */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 145px;
+    margin-left: 330px;
+    width: 400px;
+}
+
+
 
 form {
     display: flex; /* Flex layout para organizar los elementos dentro del formulario */
