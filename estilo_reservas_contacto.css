@@ -56,6 +56,13 @@ header .logo img {
     color: #ddd;
 }
 
+main {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Contenido principal */
 .contenido-main {
     margin-top: -25px; /* Para evitar que el contenido quede cubierto por la barra */
