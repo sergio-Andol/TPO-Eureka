@@ -186,8 +186,8 @@ footer {
 }
 
 .profesor img {
-    width: 350px; /* Hace que la imagen ocupe el ancho del contenedor */
-    height: 350px;
+    width: 300px; /* Hace que la imagen ocupe el ancho del contenedor */
+    height: 300px;
     object-fit: cover; /* Mantiene las proporciones de la imagen */
     border-radius: 50px; /* Da bordes redondeados */
     margin-bottom: 0 auto; /* Agrega espacio debajo de la imagen */
