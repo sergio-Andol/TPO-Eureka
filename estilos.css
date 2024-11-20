@@ -171,17 +171,28 @@ footer {
 }
 
 .profesor {
+    display: flex; /* Habilita flexbox */
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: flex-start; /* Alinea hacia la parte superior, ajusta si deseas centrar */
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     margin: 10px;
-    flex: 0 0 calc(33.33% - 20px); /* 3 columnas en pantallas grandes */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px; /* Ajusta la altura mínima */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin-left: 70px;
+}
+
+.profesor img {
+    width: 350px; /* Hace que la imagen ocupe el ancho del contenedor */
+    height: 350px;
+    object-fit: cover; /* Mantiene las proporciones de la imagen */
+    border-radius: 50px; /* Da bordes redondeados */
+    margin-bottom: 0 auto; /* Agrega espacio debajo de la imagen */
+    margin-bottom: 15px;
+    display: block;
 }
 
 /* Ajuste de columnas según tamaño de pantalla */
