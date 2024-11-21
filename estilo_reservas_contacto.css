@@ -8,11 +8,26 @@
 html, body {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
     display: flex;
     flex-direction: column;
 }
 
 
+
+main {
+    flex: 1; /* Ocupa todo el espacio restante */
+}
 
 /* Estilos para el navbar */
 header .logo img {
@@ -20,13 +35,13 @@ header .logo img {
     margin-left: 90px;
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #C0CEDD;
     color: #000000;
-    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -68,7 +83,7 @@ header .logo img {
 }
 
 .cabecera {
-    margin-top: 60px;
+    margin-top: 50px;
 
     text-align: center;
 }
@@ -84,7 +99,7 @@ header .logo img {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
-    margin: 60px auto 80px auto; /* Centra el contenedor horizontalmente */
+    margin: 40px auto 80px auto; /* Centra el contenedor horizontalmente */
 }
 
 h1 {
@@ -212,7 +227,7 @@ section {
 .cabecera1 {
     position: absolute;
     top: 0; /* Coloca la cabecera en la parte superior */
-    left: 50%; /* Coloca la cabecera en el centro horizontal */
+    left: 47%; /* Coloca la cabecera en el centro horizontal */
     transform: translateX(-50%); /* Ajusta para que esté centrado correctamente */
     z-index: 10; /* Asegura que esté por encima de los demás elementos */
     padding: 20px;
@@ -234,7 +249,7 @@ section {
     text-align: center;
     margin-top: 145px;
     margin-left: 330px;
-    width: 400px;
+    width: 450px;
 }
 
 
@@ -316,7 +331,7 @@ button:hover {
 
 
 
-/* -----PROPIEDADES DEL FOOTER--------- */
+/* Footer siempre en el fondo */
 footer {
     font-family: 'Cinzel';
     display: flex;
@@ -344,6 +359,7 @@ footer {
 .logoUade img {
     max-height: 50px;
 }
+
 
 
 
