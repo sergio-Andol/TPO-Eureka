@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +12,10 @@ html, body {
     flex-direction: column;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 
 /* Estilos para el navbar */
 header .logo img {
@@ -20,13 +23,18 @@ header .logo img {
     margin-left: 90px;
 }
 
+main {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #C0CEDD;
     color: #000000;
-    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -56,12 +64,7 @@ header .logo img {
     color: #ddd;
 }
 
-main {
-    flex: 1; /* Ocupa todo el espacio disponible */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 /* Estilos del contenedor del carrusel */
 .carousel {
