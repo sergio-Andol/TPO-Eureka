@@ -21,10 +21,17 @@
                     <img src="./logo.png" alt="Logo" />
                 </div>
             </a>
+            <!-- Menú hamburguesa con texto y "Cerrar" -->
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+                <span class="menu-text">Menú</span> <!-- Texto debajo del icono -->
+            </div>
+            <!-- Texto y botón cerrar -->
+            <div class="close-menu" id="close-menu">
+                <span class="close-icon">×</span>
+                <span class="close-text">Cerrar</span>
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html">Inicio</a></li>
@@ -87,9 +94,20 @@
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        
+        const closeMenu = document.getElementById('close-menu');
+
+        // Abrir el menú
         mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinks.classList.add('active'); // Muestra los enlaces
+            mobileMenu.style.display = 'none'; // Oculta el menú hamburguesa
+            closeMenu.style.display = 'flex'; // Muestra el botón cerrar
+        });
+
+        // Cerrar el menú
+        closeMenu.addEventListener('click', () => {
+            navLinks.classList.remove('active'); // Oculta los enlaces
+            mobileMenu.style.display = 'flex'; // Muestra el menú hamburguesa
+            closeMenu.style.display = 'none'; // Oculta el botón cerrar
         });
     </script>
 </body>
