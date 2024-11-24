@@ -95,33 +95,62 @@ main {
 
 /* Footer siempre en el fondo */
 footer {
-    font-family: 'Cinzel';
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Cinzel', serif;
     background-color: #C0CEDD;
-    color: #000000;
-    padding: 1rem;
-    width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.footer-content p {
+    color: #000;
+    padding: 20px;
+    text-align: center;
     margin: 0;
 }
 
-.logoUade img {
-    max-height: 50px;
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.footer-info {
+    text-align: left;
+    flex: 1;
+    margin-left: -200px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-info a {
+    color: #007BFF;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: #0056b3;
+}
+
+.footer-logo img {
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        text-align: center;
+    }
+}
 
 
 
