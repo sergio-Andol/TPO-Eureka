@@ -378,15 +378,25 @@ footer {
     margin: 0 auto;
 }
 
-/* Responsividad */
+/* Footer responsivo */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        text-align: center;
+        display: flex;
+        flex-direction: column; /* Colocar los elementos en columna */
+        align-items: center; /* Centrar horizontalmente */
+        gap: 20px; /* Espacio entre elementos */
+        text-align: center; /* Alinear texto al centro */
+        width: 90%;
     }
 
     .footer-info {
-        text-align: center;
+        text-align: center; /* Texto centrado */
+        margin: 0; /* Eliminar márgenes adicionales */
+        margin-bottom: 40px;
+    }
+
+    .footer-logo {
+        margin-top: -50px;
     }
 }
 
