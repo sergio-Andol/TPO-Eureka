@@ -71,6 +71,80 @@ header .logo img {
     color: #ddd;
 }
 
+
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: flex; /* Mostrar los elementos en columna */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 40px;
+    display: none;
+}
+
+
+.menu-toggle .bar {
+    background-color: #000;
+    height: 4px;
+    width: 25px;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+/* Estilo para el texto "Menú" */
+.menu-toggle .menu-text {
+    margin-top: 8px;
+    font-size: 10px;
+    color: #000;
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    font-family: 'Cinzel', serif;
+}
+
+/* Ocultar el botón de cerrar inicialmente */
+.close-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.close-menu .close-icon {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.close-menu .close-text {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+}
+
+
+/* Ocultar el checkbox */
+.menu-checkbox {
+    display: none;
+}
+
+/* Estilo del botón de menú hamburguesa */
+.menu-button {
+    display: none; /* Oculto en pantallas grandes */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+
+
+
 /* Contenido principal */
 .contenido-main {
     margin-top: -25px; /* Para evitar que el contenido quede cubierto por la barra */
@@ -406,52 +480,133 @@ footer {
 
 /* ---------MQ RESPONSIVE ELEMENTOS--------- */
 
-@media (max-width: 768px) {
+/* Estilos responsivos para el header */
+@media (max-width: 1342px) {
     .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #C0CEDD;
-        position: absolute;
-        top: 120px;
-        left: 0;
-        padding: 80px;
-        justify-content: center; /* Centra los enlaces en pantallas pequeñas */
-    }
-
-    .nav-links.active {
         display: flex;
+        flex-direction: row; /* Mantener el logo y el menú en una fila */
+        justify-content: space-between; /* Logo a la izquierda y menú hamburguesa a la derecha */
+        align-items: center; /* Centrar verticalmente */
+        padding: 10px 20px;
+        right: 0;
     }
 
-    .nav-links li {
-        margin-left: 0;
-        margin-top: -50px;
-        text-align: center; /* CENTRA LOS ENLACES */
+    .logo {
+        flex: 1; /* Ocupa el espacio necesario para alinear a la izquierda */
     }
 
     .menu-toggle {
+        display: flex; /* Mostrar menú hamburguesa */
+        justify-content: flex-end;
+        flex-direction: column;
+        cursor: pointer;
+        text-align: left
+    }
+
+    .menu-toggle .bar {
+        background-color: #000;
+        height: 4px;
+        width: 25px;
+        margin: 3px 0;
+        text-align: left
+    }
+
+    /* Texto debajo del menú hamburguesa */
+    .menu-toggle .menu-text {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #000;
+        text-transform: uppercase;
+        font-family: 'Cinzel', serif;
+    }
+
+    /* Botón de cerrar: Oculto por defecto */
+    .close-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .close-menu .close-icon {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        margin-right: 30px;
+        margin-bottom: 0;
+
+    }
+
+    .close-menu .close-text {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #000;
+        text-transform: uppercase;
+        font-family: 'Cinzel', serif;
+        margin-right: 30px;
+    }
+
+    .nav-links {
+        display: none; /* Ocultar enlaces inicialmente */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Justo debajo del navbar */
+        left: 0;
+        width: 100%;
+        background-color: #C0CEDD;
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar enlaces al activar el menú */
+    }
+
+    .nav-links.active ~ #close-menu {
         display: flex;
     }
 
-    .navbar .logo {
-        text-align: center; /* CENTRA EL LOGO */
-        margin-bottom: 20px;
+    .nav-links.active ~ .menu-toggle {
+        display: none;
     }
 
-    .contenido-main {
-        margin-top: 200px;
-        margin-bottom: 50px;
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .nav-links a {
+        padding: 10px; /* Añadir espacio interno para clics más cómodos */
+        text-decoration: none;
+        color: #000;
     }
 
-    #temaCarousel {
-        margin-top: -650px;
+    .nav-links a:hover {
+        color: #eb0000; /* Cambiar color al pasar el mouse */
     }
 }
+
+@media (min-width: 1342px) {
+    .menu-toggle {
+        display: none !important; /* Forzar ocultar el menú hamburguesa */
+    }
+
+    .close-menu {
+        display: none !important; /* Forzar ocultar el botón "Cerrar" */
+    }
+
+    .nav-links {
+        display: flex !important; /* Forzar mostrar el menú horizontal */
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+        background-color: transparent;
+    }
+}
+
+
+
+
+
 
 /* ---- MQ RESPONSIVE --RESERVAS---- */
 @media (max-width: 600px) {
@@ -470,5 +625,58 @@ footer {
         margin-left: 110px;
         margin: 204px 1px 1100px;
         width: 100%;
+    }
+}
+
+
+
+
+/*MAIN RESERVAS*/
+@media (max-width: 768px) {
+    section {
+        display: flex;
+        flex-direction: column; /* Apila los formularios */
+        align-items: center; /* Centra los formularios horizontalmente */
+        gap: 30px; /* Espacio entre formularios */
+        margin: 20px auto; /* Centrado vertical y horizontal */
+        padding: 10px; /* Espaciado interno */
+    }
+
+    .container1, .container2 {
+        width: 90%; /* Ocupa casi todo el ancho de la pantalla */
+        max-width: 500px; /* Limita el ancho máximo */
+        margin: 0 auto; /* Centra los contenedores */
+    }
+
+    .cabecera1  {
+        position: static; /* Elimina posicionamiento absoluto */
+        margin-top: 30px;
+        text-align: center; /* Centra el texto */
+        margin-left: 330px;
+    }
+    .cabecera2{
+        position: static; /* Elimina posicionamiento absoluto */
+        margin-top: 0;
+        text-align: center; /* Centra el texto */
+        margin-left: 450px;
+    }
+    
+    h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño del encabezado */
+    }
+
+    p {
+        font-size: 1rem; /* Ajusta el tamaño del párrafo */
+        margin: 0 0 10px 0; /* Espaciado inferior */
+    }
+
+    /* Ajuste para el botón de calcular */
+    #calculateBtn, #submitButton {
+        margin: 20px auto; /* Centra los botones */
+        display: block; /* Asegura que los botones ocupen todo el ancho disponible */
+    }
+
+    #result {
+        text-align: center; /* Centra el texto del resultado */
     }
 }
